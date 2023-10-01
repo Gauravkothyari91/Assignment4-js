@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+            margin-top: 170px;
+            border: 2px solid black;
+            width: 500px;
+            height: 250px;
+            margin-left: 300px;
+        }
+        label{
+            margin-top: 10px;
+        }
+        input{
+            margin-top: 10px;
+        }
+        .btn{
+            margin-top: 20px;
+            margin-right: 180px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sign Up Form</h1>
+    <form action=".php" onsubmit="validateForm(event)">
+        <label for="name">Name:</label>
+        <input type="text" id="name" placeholder="(Minimum 3 characters)"> <br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="Enter Your Email"> <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" placeholder="(Minimum 8 characters)"> <br>
+        <button class="btn">Submit</button>
+    </form>
+    <script>
+        function validateForm(event){
+            event.preventDefault();
+            const name = document.getElementById("name");
+            const email = document.getElementById("email");
+            const password = document.getElementById("password");
+            if(name.value.length >= 3 && password.value.length >= 8){
+                alert("Form Validation Successful")
+            }else{
+                alert("For Validation Failed")
+            }
+        }
+    </script>
+</body>
+</html>
